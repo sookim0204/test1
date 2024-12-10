@@ -90,8 +90,6 @@ html, body {
 }
 
 
-
-
 .input-group input {
 	width: 100%;
 	padding: 1rem 3rem;
@@ -147,28 +145,32 @@ html, body {
 	border: 0.125rem solid var(--primary-color);
 }
 
+.input-group2 input:focus {
+	border: 0.125rem solid var(--primary-color);
+}
+
 .quizQuestion {
     display: block;
-    width: 30%;
+    width: 50%;
     text-align: left; 
-    padding: 1rem 3rem;
+    padding: 0.5rem;
     font-size: 1rem;
     background-color: #D5F0C1;
     border-radius: .5rem;
     border: 0.125rem solid var(--white);
     box-sizing: border-box;
     outline: none;
-    margin: 0.5rem 0;
+    margin: 0.1rem;
     color : #ffffff;
 }
 
 .horizontal-group {
     display: flex;
     align-items: center;
-    gap: 1rem; /* 라벨과 셀렉트 박스 사이 간격 */
+    gap: 0.1rem; /* 라벨과 셀렉트 박스 사이 간격 */
 }
 
-.horizontal-group label {
+.horizontal-group div {
     width: 30%; /* 라벨의 고정 너비 (필요에 따라 조정) */
     text-align: right; /* 오른쪽 정렬 */
 }
@@ -577,11 +579,11 @@ to {
 						</div>
 
 
-						<div class="input-group2" style="display: flex; width: 100%;">
+						<div class="input-group2 horizontal-group" style="display: flex; width: 100%;">
 							<input type="text" name="zip" id="zip" class="form-control"
-								placeholder="우편번호" value="${dto.zip}" readonly style="flex: 7;">
-							<button class="btn btn-light postal-button" type="button"
-								onclick="daumPostcode();" style="flex: 3;">우편번호 검색</button>
+								placeholder="우편번호" value="${dto.zip}" readonly style="flex: 6;">
+							<button class="btn btn-light postal-button" type="button" 
+								onclick="daumPostcode();" style="flex: 4; font-size: 1rem;">우편번호 검색</button>
 						</div>
 
 						<div class="input-group2">
@@ -593,8 +595,8 @@ to {
 								placeholder="주소2">
 						</div>
 						<div class="input-group2 horizontal-group">
-						<div class="quizQuestion">비밀번호 찾기</div>
-							<select required>
+						<div class="quizQuestion" style="flex: 3.5;">비밀번호찾기</div>
+							<select style="flex: 6.5;" required>
                                 <option value="">:: 선택 ::</option>
                                   <option value="추억의 장소">기억에 남는 추억의 장소는?</option>
                                   <option value="선생님 이름">가장 기억에 남는 선생님 성함은?</option>
