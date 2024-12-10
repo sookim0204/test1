@@ -74,6 +74,12 @@ html, body {
 	transition-delay: 1s;
 }
 
+.form.sign-up2 {
+    max-height: 45rem; /* 최대 높이 제한 */
+    padding: 1rem; /* 패딩으로 내부 여백 조정 */
+     margin-top: 8rem; /* 위쪽 여백 추가 */
+}
+
 .input-group {
 	position: relative;
 	width: 100%;
@@ -567,8 +573,8 @@ to {
 					</div>
 
 					<!-- 영역분할2 -->
-					<div class="row mb-3">
-					<div class="form sign-up2 hidden">
+					<div class="row mb-3"  >
+					<div class="form sign-up2 hidden" >
 						<div class="input-group2">
 							<i class='bx bxs-lock-alt'></i> <input type="text"
 								placeholder="전화번호">
