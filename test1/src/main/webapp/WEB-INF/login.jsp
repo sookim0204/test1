@@ -533,6 +533,28 @@ to {
 
 </style>
 
+<script type="text/javascript">
+function sendLogin() {
+	const f = document.loginForm;
+	let str;
+	
+	str = f.memberId.value;
+    if(!str) {
+        f.memberId.focus();
+        return;
+    }
+
+    str = f.memberPwd.value;
+    if(!str) {
+        f.userPwd.focus();
+        return;
+    }
+
+    f.action = "${pageContext.request.contextPath}/member/login";
+    f.submit();
+}
+</script>
+
 </head>
 <body>
 	<div id="container" class="container">
@@ -628,22 +650,23 @@ to {
 			<!-- SIGN IN -->
 			<div class="col align-items-center flex-col sign-in">
 				<div class="form-wrapper align-items-center">
-					<div class="form sign-in">
+					<form name="loginForm" action="" method="post" class="form sign-in">
 						<div class="input-group">
-							<i class='bx bxs-user'></i> <input type="text" placeholder="아이디">
+							<i class='bx bxs-user'></i> <input type="text" name="memberId" placeholder="아이디">
 						</div>
 						<div class="input-group">
-							<i class='bx bxs-lock-alt'></i> <input type="password"
+							<i class='bx bxs-lock-alt'></i> <input type="password" name="memberPwd"
 								placeholder="비밀번호">
 						</div>
-						<button>로그인</button>
+						<button type="button" onclick="sendLogin();">로그인</button>
 						<p>
-							<b> 비밀번호를 잊으셨나요? </b>
+							<a href="#">비밀번호를 잊으셨나요?</a>
 						</p>
 						<p>
 							<span> 계정이 없으세요? </span> <b onclick="toggle()" class="pointer">
 								회원가입하기 </b>
 						</p>
+					</form>
 					</div>
 				</div>
 				<div class="form-wrapper"></div>
