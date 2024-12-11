@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-
-import com.travel.dto.MemberDTO;
+import com.travel.domain.MemberDTO;
 import com.travel.util.DBConn;
 import com.travel.util.DBUtil;
 
@@ -36,7 +35,7 @@ public class MemberDAO {
 				dto.setMemberNum(rs.getLong("memberNum"));
 				dto.setMemberId(rs.getString("memberId"));
 				dto.setName(rs.getString("name"));
-				dto.setGrade(rs.getInt("grade"));
+				dto.setUserLevel(rs.getInt("userLevel"));
 				dto.setSignUpDate(rs.getString("SignUpDate"));
 			}
 			

@@ -1,90 +1,56 @@
 ﻿@charset "UTF-8";
 
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 초기화 */
 *{ padding: 0; margin: 0; }
 *, *::after, *::before { box-sizing: border-box; }
 
+/* 기본 글꼴, 기본 글꼴 사이즈, 기본 글꼴 색상  */
 body {
+	color: #222;
 	font-size: 14px;
-	font-family: "Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
+	font-family: 'Noto Sans KR', 'yg-jalnan', sans-serif !important;
 }
 
-a { text-decoration: none; color: #333333; }
-a:hover, a:active{ text-decoration: underline; cursor: pointer; color: #F28011; }
+/* a 태그 선 없애기 */
+a { text-decoration: none; color: #222; }
+a:hover, a:active{ cursor: pointer; }
 
-.nbtn {
-	color: #333333;
-	border: 1px solid #333333;
-	background-color: #ffffff;
+/* body 영역 기본 버튼 구현 */
+.btn {
+	color: #222;
+	background-color: #D5F0C1;
 	padding: 4px 10px;
 	border-radius: 4px;
 	font-weight: 500;
-	cursor:pointer;
+	cursor: pointer;
 	font-size: 14px;
-	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
+	font-family: 'Noto Sans KR', sans-serif !important;
+	display: inline-block;
 	vertical-align: baseline;
 }
-.nbtn:hover, .nbtn:active, .nbtn:focus {
-	background-color: #e6e6e6;
-	border-color: #adadad;
-	color:#333333;
+.btn:hover, .btn:active, .btn:focus {
+	background-color: #c4e6a6;
+	color:#222;
 }
-.nbtn[disabled], fieldset[disabled] .nbtn {
+
+/* 선택할 수 없는 버튼 색*/
+.btn[disabled], fieldset[disabled] .btn {
+	background-color: #D5F0C1; 
 	pointer-events: none;
 	cursor: default;
 	opacity: .65;
+	border: none;
 }
 
-.bbtn {
-    background-image:none;
-    background: #424951;
-	border:1px solid #2f3741;
-    font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
-    color:#ffffff;
-    font-weight: normal;
-    text-align:center;
-	font-size: 14px;
-	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
-	vertical-align: baseline;
-    
-}
-.bbtn:hover, .bbtn:active, .bbtn:focus {
-   font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
-    background-image:none;
-    background: #333333;
-   	border:1px solid #333333;
-    color:#ffffff;
-    font-weight: normal;
-}
-.nbtn[disabled], fieldset[disabled] .nbtn {
-	pointer-events: none;
-	cursor: default;
-	opacity: .65;
-}
-
+/*텍스트 상자 선 마우스 커서 시 선 없어짐*/
 textarea:focus, input:focus {
 	outline: none;
-}
-
-/* AJAX loading */
-.loader {
-	border: 17px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 17px solid blue;
-	border-right: 17px solid green;
-	border-bottom: 17px solid red;
-	border-left: 17px solid pink;
-	width: 120px;
-	height: 120px;
-	-webkit-animation: spin 2s linear infinite;
-	animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-	0% { -webkit-transform: rotate(0deg); }
-	100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
 }

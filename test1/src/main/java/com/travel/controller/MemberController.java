@@ -4,7 +4,7 @@ import java.io.IOException;
 
 
 import com.travel.dao.MemberDAO;
-import com.travel.dto.MemberDTO;
+import com.travel.domain.MemberDTO;
 import com.travel.mvc.annotation.Controller;
 import com.travel.mvc.annotation.RequestMapping;
 import com.travel.mvc.annotation.RequestMethod;
