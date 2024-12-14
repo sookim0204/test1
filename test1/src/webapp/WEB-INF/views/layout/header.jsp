@@ -41,6 +41,10 @@
 				<li class="nav-item">
 				  	<a class="nav-link" href="#">고객센터</a>
 				</li>
+				<li class="nav-item">
+				  	<a class="nav-link" href="${pageContext.request.contextPath}/admin">관리자</a>
+				</li>
+				
 				
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person-circle" title="프로필"></i></a>
