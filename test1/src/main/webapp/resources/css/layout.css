@@ -10,9 +10,8 @@
 /* 검색상자  */
 .search-input {
 	width: 100%;
-	padding-right: 40px;
 	border: 2px solid #28a745;
-	padding: 5px 10px;
+	padding: 5px 30px 5px 10px;
 	font-size: 14px;
 	font-family: 'Noto Sans KR', sans-serif !important;
 }

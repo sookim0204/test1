@@ -26,12 +26,12 @@
 
 /* 전체 탭 제목 스타일 */
 .typing-container {
-  font-size: 35px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 300;
   font-family: 'yg-jalnan', sans-serif !important;
-  margin-top: 70px;
-  margin-bottom: 50px;
-  width: 600px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  width: 450px;
   word-break: keep-all;
 }
 
@@ -40,7 +40,7 @@
   animation: blink 0.7s infinite;
   display: inline-block;
   margin-left: 2px;
-  height: 35px; /* 폰트 크기와 동일하게 설정 */
+  height: 30px; /* 폰트 크기와 동일하게 설정 */
   vertical-align: middle;
 }
 
@@ -59,34 +59,29 @@
 /* 탭 전체 스타일 */
 .tabs {
 	margin: 0 auto;
-	margin-top: 10px;
-	padding-top: 30px;
-	padding-bottom: 40px;
-	background-color: #fff;
-	width: 100%;
+	padding-bottom: 80px;
+	width: 80%;
 }
 
 /* 탭 메뉴 스타일 */
 .tab_item {
 	font-family: 'yg-jalnan', sans-serif !important;
-	font-size: 16px;
+	font-size: 20px;
 	width: calc(100%/4);
-	height: 40px;
+	height: 60px;
 	border-bottom: 5px solid #28a745;
-	border-radius: 2px;
-	background-color: #fff;
-	line-height: 40px;
+	line-height: 60px;
 	color: #222;
 	display: block;
 	float: left;
 	text-align: center;
 	transition: all 0.2s ease;
+	/* opacity: 0.75; */
 }
 
 /* 탭 메뉴 선택 시 */
 .tab_item:hover {
-	/* opacity: 0.75; */
-	font-size: 20px;
+	font-size: 24px;
 }
 
 /* 탭 가리기 */
@@ -96,9 +91,12 @@ input[name="tab_item"] {
 
 .tab_content {
 	display: none;
-	padding: 10px 10px 0;
+	height: 400px;
+	padding: 0px 20px 20px 20px;
 	clear: both;
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 
 /* 선택 된 탭 콘텐츠를 표시 */
@@ -111,36 +109,89 @@ input[name="tab_item"] {
 
 /* 선택된 탭 스타일 */
 .tabs input:checked + .tab_item {
-	background-color: #fff;
+	border-bottom: 10px solid #28a745;
 	color: #222;
-	font-size: 20px;
+	font-size: 24px;
 }
 
 /* 탭 안 공간 부분 */
 .prod_detail_ct {
-	text-align:center;
-	margin-top: 50px;
+	padding: 50px 0px;
 	overflow: hidden;
-	padding-bottom: 50px;
 }
 
-/* 슬라이드 사진 공간 구분 */
-.grid_col3_wrap {
-	display: grid;  /*grid-template-columns: repeat(4, auto);*/
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: auto;
-	align-items: center;
-	bottom:0;
-	padding-top:10px;
-	text-align:center;
-	padding-bottom:0px;
-	grid-gap:40px;
-}
-
+/* 탭 내용 공간 스타일 */
 .cont_wrap {
-	background-color: #fff;
+	position: relative;
+	height: 300px;
+	overflow: hidden;
 }
-         
+
+/* 슬라이드 스타일 */
+li { list-style: none; }
+
+.best_list {
+	display: flex;
+    position: relative;
+    padding: 0px;
+    transition: left 0.5s ease;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.best_list li:not(:last-child) {
+	margin-right: 30px;
+}
+
+.best img {
+	width: 313px;
+	height: 200px;
+	object-fit: cover;
+}
+
+.controls {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.controls span {
+	cursor: pointer;
+	z-index: 100;
+}
+
+.controls span:hover {
+    
+}
+
+/* 이미지 번호 */
+.best_list > li {
+	float: left;
+	width: 313px;
+	box-sizing: content-box;
+	position: relative;
+}
+
+.slide_list > li:before {
+	position: absolute;
+	left: 10px; top: 10px;
+	color: #fff;
+}
+
+.best_list > li:nth-child(10n+1)::before {content:'01'}
+.best_list > li:nth-child(10n+2)::before {content:'02'}
+.best_list > li:nth-child(10n+3)::before {content:'03'}
+.best_list > li:nth-child(10n+4)::before {content:'04'}
+.best_list > li:nth-child(10n+5)::before {content:'05'}
+.best_list > li:nth-child(10n+6)::before {content:'06'}
+.best_list > li:nth-child(10n+7)::before {content:'07'}
+.best_list > li:nth-child(10n+8)::before {content:'08'}
+.best_list > li:nth-child(10n+9)::before {content:'09'}
+.best_list > li:nth-child(10n+10)::before {content:'10'}
+
 </style>
 
 </head>
@@ -166,7 +217,7 @@ input[name="tab_item"] {
 			<!-- 슬라이드 이미지 및 텍스트 -->
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-				<img src="${pageContext.request.contextPath}/resources/images/1.jpeg" class="d-block w-100" alt="배너이미지" style="height: 500px; object-fit: cover;">
+				<img src="${pageContext.request.contextPath}/resources/images/1.jpg" class="d-block w-100" alt="배너이미지" style="height: 500px; object-fit: cover;">
 					<div class="carousel-caption d-none d-md-block text-start">
 						<h5>풍경과 문화가 어우러진 특별한 여행을 떠나보세요.</h5>
 						<p></p>
@@ -234,29 +285,49 @@ input[name="tab_item"] {
 	            <!-- 여행후기라인 -->
 	            <div class="tab_content" id="tab_01">
 	               <div class="prod_detail_ct">
-	                  <div class="grid_col3_wrap">
-	                     <div class="cont_wrap">
-	                        넣을 수 있을까?
-	                     </div>
-	                     <div class="cont_wrap">
-	                        ...?
-	                     </div>
-	                     <div class="cont_wrap">
-	                        슬라이드
-	                     </div>
-	                  </div>
-	               </div>
-	            </div>
+						<div class="cont_wrap">
+							<ul class="best_list">
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+								<li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+							</ul>
+							<p class="controls">
+								<span class="prev"><i class="bi bi-chevron-left"></i></span>
+								<span class="next"><i class="bi bi-chevron-right"></i></span>
+							</p>
+						</div>
+					</div>
+				</div>
 	            <!-- 여행후기라인 -->
 	
 	            <!-- 여행지라인 -->
 	            <div class="tab_content" id="tab_02_content">
 	               <div class="prod_detail_ct">
-	                  <div class="grid_col3_wrap">
-	                     <div class="cont_wrap">
-	                        2번의 내용이 들어갑니다.
-	                     </div>
-	                  </div>
+                     <div class="cont_wrap">
+	                    <ul class="best_list">
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                        <li class="best"><img src="${pageContext.request.contextPath}/resources/images/add_photo.png" alt="Image"></li>
+	                    </ul>
+	                    <p class="controls">
+	                   		<span class="prev"><i class="bi bi-chevron-left"></i></span>
+					    	<span class="next"><i class="bi bi-chevron-right"></i></span>
+	                    </p>
+                     </div>
 	               </div>
 	            </div>
 	            <!-- 여행지라인 -->
@@ -284,26 +355,76 @@ input[name="tab_item"] {
 	               </div>
 	            </div>
 	            <!-- 맛집 라인 -->
+	            
 			</div>
-         </div>
+		</div>
 	</div>
 </main>
 
 <script type="text/javascript">
 
-const text = "요즘 핫한 여행지를 알아볼까요?"; // 타이핑할 문구
-let index = 0;
-let speed = 200; // 글자 타이핑 속도 (밀리초 단위)
+/* 탭 타이틀 동작 */
+window.addEventListener('load', () => {
+	const text = "요즘 핫한 여행지를 알아볼까요?"; // 타이핑할 문구
+	let index = 0;
+	let speed = 200; // 글자 타이핑 속도 (밀리초 단위)
+	
+	function typeWriter() {
+	  if (index < text.length) {
+	    document.getElementById("text").textContent += text.charAt(index);
+	    index++;
+	    setTimeout(typeWriter, speed);
+	  }
+	}
 
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("text").textContent += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, speed);
-  }
-}
+	typeWriter();
 
-typeWriter();
+	/* 슬라이드 동작 */
+	const best_list = document.querySelector('.best_list');
+	const best = document.querySelectorAll('.best_list li');
+	const prevBtn = document.querySelector('.prev');
+	const nextBtn = document.querySelector('.next');
+
+	const slideCount = 10; /* 사진 개수 */
+	let currentIdx = 0;
+	
+	let slideWidth = 313; // 이미지 너비
+	let slideMargin = 30; // 이미지 간 간격
+	
+	best_list.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px'; // 전체 너비 설정
+	best_list.style.left = '0px';
+
+	function moveSlide(num) {
+		best_list.style.left = -num * 343 + 'px';
+		currentIdx = num;
+	}
+	
+	
+	nextBtn.addEventListener('click', e => {
+		e.preventDefault();
+		if (currentIdx < slideCount - 3) {
+			moveSlide(currentIdx + 1);
+		}
+	});
+	
+	prevBtn.addEventListener('click', e => {
+		e.preventDefault();
+		if (currentIdx > 0) {
+			moveSlide(currentIdx - 1);
+		}
+	});
+
+	/*
+	// 탭을 클릭할 때마다 슬라이드 초기화
+    const tabs = document.querySelectorAll('input[name="tab_item"]');
+    tabs.forEach(tab => {
+        tab.addEventListener('change', () => {
+            best_list.style.left = '0px';
+            currentIdx = 0;
+        });
+    });
+    */
+});
 
 </script>
 

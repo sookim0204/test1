@@ -11,7 +11,7 @@
 
 		<!-- 검색창 -->
 		<div class="d-flex me-auto search-box">
-			<input type="search" class="search-input" placeholder="어디로 여행하조?" maxlength="30">
+			<input type="search" class="search-input" placeholder="어디로 여행하조?">
 			<button style="border: none; background: none;"><i class="bi bi-search search-icon"></i></button>
 		</div>
 		
@@ -45,11 +45,11 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person-circle" title="프로필"></i></a>
 					<div class="dropdown-menu dropdown-menu-end">
-						<a class="dropdown-item" href="#">마이페이지</a>
+						<a class="dropdown-item" href="${pageContext.request.contextPath}/mypage">마이페이지</a>
 					<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">나의 작성글</a>
-						<a class="dropdown-item" href="#">나의 작성댓글</a>
-						<a class="dropdown-item" href="#">나의 스크랩</a>
+						<a class="dropdown-item" href="#">작성한 글</a>
+						<a class="dropdown-item" href="#">댓글단 글</a>
+						<a class="dropdown-item" href="#">좋아요</a>
 					</div>
 				</li>
 				<li class="nav-item">

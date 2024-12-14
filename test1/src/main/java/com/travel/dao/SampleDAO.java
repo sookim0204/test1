@@ -1,41 +1,37 @@
 package com.travel.dao;
 
+import com.travel.domain.ArticleDTO;
+import com.travel.domain.MemberInfo;
+import com.travel.domain.SampleDTO;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.travel.domain.ArticleDTO;
-import com.travel.domain.SampleDTO;
-
 public class SampleDAO implements ArticleDAO {
 
 	@Override
-	public void insert(ArticleDTO dto) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public void insert(ArticleDTO articleDto) throws SQLException {
+		SampleDTO dto = (SampleDTO) articleDto;
 	}
 
 	@Override
-	public void update(ArticleDTO dto) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public void update(ArticleDTO articleDto) throws SQLException {
+		SampleDTO dto = (SampleDTO) articleDto;
 	}
 
 	@Override
-	public void delete() throws SQLException {
-		// TODO Auto-generated method stub
+	public void delete(long num, MemberInfo info) throws SQLException {
 		
 	}
 
 	@Override
 	public void updateHitCount(long num) throws SQLException {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public int dataCount() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

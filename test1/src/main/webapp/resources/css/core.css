@@ -12,6 +12,8 @@
 *{ padding: 0; margin: 0; }
 *, *::after, *::before { box-sizing: border-box; }
 
+ul { list-style: none; }
+
 /* 기본 글꼴, 기본 글꼴 사이즈, 기본 글꼴 색상  */
 body {
 	color: #222;
