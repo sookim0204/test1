@@ -38,6 +38,12 @@
 .board-list tr > th, .board-list tr > td { text-align: center; }
 </style>
 
+<script type="text/javascript">
+function searchList() {
+	const f = document.searchForm;
+	f.submit();
+}
+</script>
 </head>
 <body id="page-top">
 
@@ -93,13 +99,13 @@
 				<div class="row board-list-footer">
 					<div class="col">
 						<button type="button" class="btn btn-light"
-							onclick="location.href='${pageContext.request.contextPath}/bbs/list';">
+							onclick="location.href='${pageContext.request.contextPath}/help/contact/myInquiry';">
 							<i class="bi bi-arrow-clockwise"></i>
 						</button>
 					</div>
 					<div class="col-6 text-center">
 						<form class="row" name="searchForm"
-							action="${pageContext.request.contextPath}/bbs/list"
+							action="${pageContext.request.contextPath}/help/contact/myInquiry"
 							method="post">
 							<div class="col-auto p-1">
 								<select name="schType" class="form-select">

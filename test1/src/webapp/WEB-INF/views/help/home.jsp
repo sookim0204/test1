@@ -63,6 +63,31 @@
 }
 </style>
 
+<script type="text/javascript">
+function sendOk() {
+    const f = document.boardForm;
+	let str;
+	
+    str = f.subject.value.trim();
+    if(!str) {
+        alert('제목을 입력하세요. ');
+        f.subject.focus();
+        return;
+    }
+
+    str = f.content.value.trim();
+    if(!str) {
+        alert('내용을 입력하세요. ');
+        f.content.focus();
+        return;
+    }
+
+    f.action = '${pageContext.request.contextPath}/help/contact/inquiry/${mode}';
+    f.submit();
+}
+</script>
+
+
 </head>
 <body id="page-top">
 
@@ -88,29 +113,28 @@
 				<div class="body-main">
 					<div>
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
-							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="tab-notice"
-									data-tab="notice" data-bs-toggle="tab" type="button" role="tab"
-									aria-selected="true">공지사항</button>
+							<li class="nav-item" role="presentation"><li class="nav-item" role="presentation">
+							<a href="${pageContext.request.contextPath}/help/inquiry"
+								class="nav-link sub_menu--link" id="my-inquiry-link">공지사항</a>
 							</li>
 							<li class="nav-item" role="presentation">
 								<button class="nav-link" id="tab-faq" data-tab="faq"
 									data-bs-toggle="tab" type="button" role="tab"
 									aria-selected="false">자주 묻는 질문</button>
 							</li>
-							<li class="nav-item" role="presentation"><li class="nav-item" role="presentation"><a
-								href="${pageContext.request.contextPath}/help/inquiry"
+							<li class="nav-item" role="presentation"><li class="nav-item" role="presentation">
+							<a href="${pageContext.request.contextPath}/help/contact/inquiry"
 								class="nav-link sub_menu--link" id="my-inquiry-link">1:1문의</a>
 							</li>
 
-							<li class="nav-item" role="presentation"><a
-								href="${pageContext.request.contextPath}/help/contact/myinquiry"
-								class="nav-link sub_menu--link" id="my-inquiry-link">나의 문의</a></li>
+							<li class="nav-item" role="presentation">
+							<a href="${pageContext.request.contextPath}/help/contact/myInquiry"
+								class="nav-link sub_menu--link" id="my-inquiry-link">나의 문의</a>
+							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="tab-ads" data-tab="ads"
-									data-bs-toggle="tab" type="button" role="tab"
-									aria-selected="false">광고신청</button>
+							<a href="${pageContext.request.contextPath}/help/ad"
+								class="nav-link sub_menu--link" id="my-inquiry-link">광고 신청</a>
 							</li>
 						</ul>
 					</div>
