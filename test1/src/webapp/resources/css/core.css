@@ -1,0 +1,58 @@
+﻿@charset "UTF-8";
+
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 초기화 */
+*{ padding: 0; margin: 0; }
+*, *::after, *::before { box-sizing: border-box; }
+
+ul { list-style: none; }
+
+/* 기본 글꼴, 기본 글꼴 사이즈, 기본 글꼴 색상  */
+body {
+	color: #222;
+	font-size: 14px;
+	font-family: 'Noto Sans KR', 'yg-jalnan', sans-serif !important;
+}
+
+/* a 태그 선 없애기 */
+a { text-decoration: none; color: #222; }
+a:hover, a:active{ cursor: pointer; }
+
+/* body 영역 기본 버튼 구현 */
+.btn {
+	color: #222;
+	background-color: #D5F0C1;
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-weight: 500;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: 'Noto Sans KR', sans-serif !important;
+	display: inline-block;
+	vertical-align: baseline;
+}
+.btn:hover, .btn:active, .btn:focus {
+	background-color: #c4e6a6;
+	color:#222;
+}
+
+/* 선택할 수 없는 버튼 색*/
+.btn[disabled], fieldset[disabled] .btn {
+	background-color: #D5F0C1; 
+	pointer-events: none;
+	cursor: default;
+	opacity: .65;
+	border: none;
+}
+
+/*텍스트 상자 선 마우스 커서 시 선 없어짐*/
+textarea:focus, input:focus {
+	outline: none;
+}
